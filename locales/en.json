@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "contactUs": "Contact Us"
+  },
+  "hero": {
+    "badge": "🧪 Chemical Solutions Leader",
+    "title": "Chemical",
+    "titleHighlight": "Innovation",
+    "subtitle": "For Industry",
+    "description": "Providing high-quality chemical solutions, latest innovations, and trusted services with over 20 years of expert experience",
+    "explorePortfolio": "Explore Our Portfolio",
+    "freeConsultation": "Free Consultation",
+    "cards": [
+      {
+        "icon": "🔬",
+        "title": "R&D",
+        "subtitle": "Latest innovations"
+      },
+      {
+        "icon": "⚗️",
+        "title": "Premium quality",
+        "subtitle": "International standards"
+      },
+      {
+        "icon": "🌱",
+        "title": "Eco-friendly",
+        "subtitle": "Sustainable & environmentally friendly"
+      },
+      {
+        "icon": "🏭",
+        "title": "Industry coverage",
+        "subtitle": "Serving multiple industries"
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      { "value": "500+", "label": "Customers nationwide" },
+      { "value": "20+", "label": "Years of experience" },
+      { "value": "1000+", "label": "Products" },
+      { "value": "98%", "label": "Satisfaction" }
+    ]
+  },
+  "about": {
+    "title": "About MatchChemical",
+    "subtitle": "Leading chemical solutions that blend innovation and experience",
+    "vision": "🎯 Our Vision",
+    "visionText": "Committed to developing chemical innovations that meet Thai industry needs, creating sustainable value for customers",
+    "mission": "🚀 Our Mission",
+    "missionText": "Providing high-quality chemicals, precise analysis services, and chemical solution consulting to enhance your business efficiency",
+    "highlights": [
+      {
+        "title": "Expert team",
+        "subtitle": "Experienced chemists and engineers"
+      },
+      {
+        "title": "Latest technology",
+        "subtitle": "Modern equipment & standard labs"
+      },
+      {
+        "title": "End-to-end service",
+        "subtitle": "From consultation to after-sales"
+      },
+      {
+        "title": "Quality assurance",
+        "subtitle": "ISO 9001 and more"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete chemical solutions that meet all your business needs",
+    "chemical": {
+      "title": "Industrial Chemicals",
+      "description": "Sourcing and distributing high-quality chemicals for various industries, including raw materials and chemical additives",
+      "features": ["High Purity Chemicals", "Quality Raw Materials", "Specialty Chemicals"]
+    },
+    "analysis": {
+      "title": "Chemical Analysis",
+      "description": "Testing and chemical quality analysis services with international standard laboratories",
+      "features": ["Quality Testing", "Component Analysis", "Certified Results"]
+    },
+    "solutions": {
+      "title": "Industrial Solutions",
+      "description": "Providing consulting and recommending chemical solutions suitable for your business",
+      "features": ["Process Design", "Problem Solving", "Efficiency Enhancement"]
+    }
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Projects we're proud to present, creating success for many customers",
+    "viewDetails": "View Details",
+    "items": [
+      {
+        "badge": "Chemical production project",
+        "title": "Large industrial plant",
+        "description": "Installed chemical production systems for rubber and plastics factories"
+      },
+      {
+        "badge": "QA/QC laboratory",
+        "title": "ISO 9001 standard",
+        "description": "Set up quality control labs for cosmetics factories"
+      },
+      {
+        "badge": "Wastewater treatment",
+        "title": "Food factory",
+        "description": "Designed chemical wastewater treatment systems for food processing plants"
+      },
+      {
+        "badge": "Product formulation",
+        "title": "New products",
+        "description": "Researched and developed chemical formulations for cosmetics companies"
+      },
+      {
+        "badge": "Raw material sourcing",
+        "title": "Cosmetics industry",
+        "description": "Supplied high-quality chemical raw materials for cosmetics manufacturing"
+      },
+      {
+        "badge": "Safety consulting",
+        "title": "Safety & environment",
+        "description": "Consulted on hazardous chemical management and environmental compliance"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to provide services and chemical solution consulting for your business",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "sendMessage": "Send Message",
+    "addressText": "123 Industrial Road\nKhlong Toei, Bangkok 10110",
+    "phoneText": "02-123-4567\n08-9999-8888",
+    "emailText": "info@matchchemical.com\nsupport@matchchemical.com"
+  },
+  "footer": {
+    "description": "Leading industrial chemical solutions",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "copyright": "© 2024 MatchChemical. All rights reserved.",
+    "links": {
+      "services": ["Industrial Chemicals", "Chemical Analysis", "Industrial Solutions"],
+      "about": ["About Us", "Portfolio", "Team"],
+      "contact": ["Contact Us", "Free Consultation", "FAQ"]
+    }
+  }
+}

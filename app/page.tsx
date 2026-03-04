@@ -1,65 +1,420 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { translations, type Language } from '../lib/i18n';
 
 export default function Home() {
+  const [language, setLanguage] = useState<Language>("th");
+  const t = translations[language];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="min-h-screen bg-gradient-to-br from-blue-400 via-purple-400 to-indigo-500 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div 
+          className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            scale: [1, 1.1, 1],
+            x: [0, 20, 0],
+            y: [0, -20, 0]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <motion.div 
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            x: [0, -30, 0],
+            y: [0, 30, 0]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-10"
+          animate={{ 
+            scale: [1, 1.15, 1],
+            x: [0, 40, 0],
+            y: [0, -40, 0]
+          }}
+          transition={{ 
+            duration: 12, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 4
+          }}
+        />
+      </div>
+
+      {/* Navigation */}
+      <motion.nav 
+        className="relative z-10 bg-white/5 backdrop-blur-xl border-b border-white/10"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex justify-between items-center py-6">
+            <div className="flex items-center space-x-2">
+              <Image
+                src="/matchchemical_logo_removebg.png"
+                alt="MatchChemical Logo"
+                width={60}
+                height={60}
+                className="rounded-lg"
+              />
+              <div className="text-white font-bold text-2xl tracking-tight">MatchChemical</div>
+            </div>
+            <div className="hidden md:flex space-x-8">
+              <a href="#home" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.home}</a>
+              <a href="#about" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.about}</a>
+              <a href="#services" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.services}</a>
+              <a href="#portfolio" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.portfolio}</a>
+              <a href="#contact" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.contact}</a>
+            </div>
+            <div className="flex items-center space-x-4">
+              <button 
+                onClick={() => setLanguage(language === "th" ? "en" : "th")}
+                className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-lg font-medium hover:bg-white/20 transition-all duration-300"
+              >
+                {language === "th" ? "EN" : "TH"}
+              </button>
+              <button className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+                {t.nav.contactUs}
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </motion.nav>
+
+      {/* Hero Section */}
+      <motion.section 
+        id="home" 
+        className="relative z-10 py-32 px-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                <span className="text-blue-200 text-sm font-medium">{t.hero.badge}</span>
+              </div>
+              <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                {t.hero.title}
+                <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent"> {t.hero.titleHighlight}</span>
+                <br />
+                {t.hero.subtitle}
+              </h1>
+              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+                {t.hero.description}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.button 
+                  className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {t.hero.explorePortfolio}
+                </motion.button>
+                <motion.button 
+                  className="border-2 border-white/50 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {t.hero.freeConsultation}
+                </motion.button>
+              </div>
+            </div>
+            <div className="relative">
+              <motion.div 
+                className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  {t.hero.cards.map((card, index) => (
+                    <motion.div 
+                      key={index}
+                      className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl p-6 border border-white/10"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <div className="text-4xl mb-2">{card.icon}</div>
+                      <h3 className="text-white font-semibold mb-1">{card.title}</h3>
+                      <p className="text-blue-200 text-sm">{card.subtitle}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
-      </main>
+      </motion.section>
+
+      {/* Stats Section */}
+      <motion.section 
+        className="relative z-10 py-16 px-6"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {t.stats.items.map((item, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{item.value}</div>
+                  <div className="text-blue-200">{item.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* About Section */}
+      <motion.section 
+        id="about" 
+        className="relative z-10 py-20 px-6"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">{t.about.title}</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              {t.about.subtitle}
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-4">{t.about.vision}</h3>
+                <p className="text-blue-100 leading-relaxed">
+                  {t.about.visionText}
+                </p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-4">{t.about.mission}</h3>
+                <p className="text-blue-100 leading-relaxed">
+                  {t.about.missionText}
+                </p>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl p-8 border border-white/20">
+              <div className="space-y-4">
+                {t.about.highlights.map((item, index) => (
+                  <div key={index} className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="text-white font-semibold">{item.title}</h4>
+                      <p className="text-blue-200 text-sm">{item.subtitle}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Services Section */}
+      <section id="services" className="relative z-10 py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">{t.services.title}</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              {t.services.subtitle}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">🧪</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">{t.services.chemical.title}</h3>
+              <p className="text-blue-100 mb-6 leading-relaxed">
+                {t.services.chemical.description}
+              </p>
+              <ul className="space-y-2 text-blue-200">
+                {t.services.chemical.features.map((feature, index) => (
+                  <li key={index} className="flex items-center"><span className="mr-2">•</span> {feature}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="group bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">🔬</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">{t.services.analysis.title}</h3>
+              <p className="text-blue-100 mb-6 leading-relaxed">
+                {t.services.analysis.description}
+              </p>
+              <ul className="space-y-2 text-blue-200">
+                {t.services.analysis.features.map((feature, index) => (
+                  <li key={index} className="flex items-center"><span className="mr-2">•</span> {feature}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="group bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">🏭</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">{t.services.solutions.title}</h3>
+              <p className="text-blue-100 mb-6 leading-relaxed">
+                {t.services.solutions.description}
+              </p>
+              <ul className="space-y-2 text-blue-200">
+                {t.services.solutions.features.map((feature, index) => (
+                  <li key={index} className="flex items-center"><span className="mr-2">•</span> {feature}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="relative z-10 py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">{t.portfolio.title}</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              {t.portfolio.subtitle}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {t.portfolio.items.map((item, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                  <span className="text-white font-semibold text-lg">{item.badge}</span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-blue-200 text-sm mb-4">{item.description}</p>
+                  <div className="flex items-center text-blue-300 text-sm hover:text-white transition">
+                    <span>{t.portfolio.viewDetails}</span>
+                    <span className="ml-2">→</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="relative z-10 py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">{t.contact.title}</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              {t.contact.subtitle}
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">📍</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">{t.contact.address}</h3>
+              <p className="text-blue-100 whitespace-pre-line">{t.contact.addressText}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">📞</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">{t.contact.phone}</h3>
+              <p className="text-blue-100 whitespace-pre-line">{t.contact.phoneText}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">✉️</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">{t.contact.email}</h3>
+              <p className="text-blue-100 whitespace-pre-line">{t.contact.emailText}</p>
+            </div>
+          </div>
+          <div className="text-center">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              {t.contact.sendMessage}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 bg-black/20 backdrop-blur-xl py-12 px-6 border-t border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <Image
+                  src="/matchchemical_logo_removebg.png"
+                  alt="MatchChemical Logo"
+                  width={48}
+                  height={48}
+                  className="rounded-lg"
+                />
+                <div className="text-white font-bold text-xl">MatchChemical</div>
+              </div>
+              <p className="text-blue-200 text-sm">{t.footer.description}</p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">{t.footer.services}</h4>
+              <ul className="space-y-2 text-blue-200 text-sm">
+                {t.footer.links.services.map((label, index) => (
+                  <li key={index}><a href="#" className="hover:text-white transition">{label}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">{t.footer.about}</h4>
+              <ul className="space-y-2 text-blue-200 text-sm">
+                {t.footer.links.about.map((label, index) => (
+                  <li key={index}><a href="#" className="hover:text-white transition">{label}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">{t.footer.contact}</h4>
+              <ul className="space-y-2 text-blue-200 text-sm">
+                {t.footer.links.contact.map((label, index) => (
+                  <li key={index}><a href="#" className="hover:text-white transition">{label}</a></li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8 text-center">
+            <p className="text-blue-200 text-sm">{t.footer.copyright}</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
