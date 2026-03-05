@@ -79,6 +79,14 @@ export default function Home() {
                 <button className="bg-white text-blue-600 px-4 lg:px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 text-sm">
                   {t.nav.contactUs}
                 </button>
+                <a 
+                  href="https://sws.matchchemical.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-2 border-white/50 text-white px-4 lg:px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105 text-sm"
+                >
+                  {t.nav.iot}
+                </a>
               </div>
 
               {/* Mobile Menu Button */}
@@ -155,6 +163,15 @@ export default function Home() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {t.nav.contact}
+                  </a>
+                  <a
+                    href="https://sws.matchchemical.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    ระบบ IoT
                   </a>
                   <div className="flex items-center space-x-3 pt-3 border-t border-white/20">
                     <button

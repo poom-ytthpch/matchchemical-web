@@ -1,14 +1,20 @@
 import { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://matchchemical.co'
+const baseUrl = 'https://matchchemical.co'
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
+    },
+    {
+      url: 'https://sws.matchchemical.co',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/#about`,
@@ -32,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/#contact`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
-      priority: 0.8,
+      priority: 0.6,
     },
   ]
 }
