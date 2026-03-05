@@ -7,6 +7,9 @@
     "contact": "Contact",
     "contactUs": "Contact Us"
   },
+  "header": {
+    "companyName": "Match Chemical"
+  },
   "hero": {
     "badge": "🧪 Chemical Solutions Leader",
     "title": "Chemical",
@@ -135,11 +138,12 @@
     "phone": "Phone",
     "email": "Email",
     "sendMessage": "Send Message",
-    "addressText": "123 Industrial Road\nKhlong Toei, Bangkok 10110",
-    "phoneText": "02-123-4567\n08-9999-8888",
-    "emailText": "info@matchchemical.com\nsupport@matchchemical.com"
+    "addressText": "399/76, CHALONG KRUNG, LAM PLA TUE, LAT KRABANG, BANGKOK 10520",
+    "phoneText": "02-045-5568",
+    "emailText": "matchchemical@gmail.com"
   },
   "footer": {
+    "fullCompanyName": "MATCH CHEMICAL CO., LTD.",
     "description": "Leading industrial chemical solutions",
     "services": "Services",
     "about": "About",

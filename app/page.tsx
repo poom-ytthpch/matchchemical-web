@@ -3,17 +3,17 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { translations, type Language } from '../lib/i18n';
+import { translations, type Language } from "../lib/i18n";
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("th");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = translations[language];
-  
+
   return (
     <>
       <header>
-        <nav 
+        <nav
           className="relative z-10 bg-white/5 backdrop-blur-xl border-b border-white/10"
           role="navigation"
           aria-label="Main navigation"
@@ -28,21 +28,48 @@ export default function Home() {
                   height={45}
                   className="rounded-lg"
                 />
-                <div className="text-white font-bold text-lg lg:text-2xl tracking-tight">MatchChemical</div>
+                <div className="text-white font-bold text-lg lg:text-xl tracking-tight">
+                  {t.header.companyName}
+                </div>
               </div>
-              
+
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center space-x-8">
-                <a href="#home" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.home}</a>
-                <a href="#about" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.about}</a>
-                <a href="#services" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.services}</a>
-                <a href="#portfolio" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.portfolio}</a>
-                <a href="#contact" className="text-white/90 hover:text-white transition-all duration-300 font-medium">{t.nav.contact}</a>
+                <a
+                  href="#home"
+                  className="text-white/90 hover:text-white transition-all duration-300 font-medium"
+                >
+                  {t.nav.home}
+                </a>
+                <a
+                  href="#about"
+                  className="text-white/90 hover:text-white transition-all duration-300 font-medium"
+                >
+                  {t.nav.about}
+                </a>
+                <a
+                  href="#services"
+                  className="text-white/90 hover:text-white transition-all duration-300 font-medium"
+                >
+                  {t.nav.services}
+                </a>
+                <a
+                  href="#portfolio"
+                  className="text-white/90 hover:text-white transition-all duration-300 font-medium"
+                >
+                  {t.nav.portfolio}
+                </a>
+                <a
+                  href="#contact"
+                  className="text-white/90 hover:text-white transition-all duration-300 font-medium"
+                >
+                  {t.nav.contact}
+                </a>
               </div>
-              
+
               {/* Desktop Actions */}
               <div className="hidden lg:flex items-center space-x-4">
-                <button 
+                <button
                   onClick={() => setLanguage(language === "th" ? "en" : "th")}
                   className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-lg font-medium hover:bg-white/20 transition-all duration-300 text-sm"
                   aria-label="Toggle language"
@@ -53,23 +80,38 @@ export default function Home() {
                   {t.nav.contactUs}
                 </button>
               </div>
-              
+
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="lg:hidden bg-white/10 backdrop-blur-sm border border-white/20 text-white p-2 rounded-lg hover:bg-white/20 transition-all duration-300"
                 aria-label="Toggle mobile menu"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   {mobileMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   )}
                 </svg>
               </button>
             </div>
-            
+
             {/* Mobile Menu */}
             {mobileMenuOpen && (
               <motion.div
@@ -79,13 +121,43 @@ export default function Home() {
                 className="lg:hidden bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl mt-4 p-4"
               >
                 <div className="flex flex-col space-y-3">
-                  <a href="#home" className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>{t.nav.home}</a>
-                  <a href="#about" className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>{t.nav.about}</a>
-                  <a href="#services" className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>{t.nav.services}</a>
-                  <a href="#portfolio" className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>{t.nav.portfolio}</a>
-                  <a href="#contact" className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>{t.nav.contact}</a>
+                  <a
+                    href="#home"
+                    className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t.nav.home}
+                  </a>
+                  <a
+                    href="#about"
+                    className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t.nav.about}
+                  </a>
+                  <a
+                    href="#services"
+                    className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t.nav.services}
+                  </a>
+                  <a
+                    href="#portfolio"
+                    className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t.nav.portfolio}
+                  </a>
+                  <a
+                    href="#contact"
+                    className="text-white/90 hover:text-white transition-all duration-300 font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t.nav.contact}
+                  </a>
                   <div className="flex items-center space-x-3 pt-3 border-t border-white/20">
-                    <button 
+                    <button
                       onClick={() => {
                         setLanguage(language === "th" ? "en" : "th");
                         setMobileMenuOpen(false);
@@ -95,7 +167,7 @@ export default function Home() {
                     >
                       {language === "th" ? "EN" : "TH"}
                     </button>
-                    <button 
+                    <button
                       onClick={() => setMobileMenuOpen(false)}
                       className="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 text-sm"
                     >
@@ -110,8 +182,8 @@ export default function Home() {
       </header>
 
       <main>
-        <section 
-          id="home" 
+        <section
+          id="home"
           className="relative z-10 py-32 px-6"
           role="main"
           aria-labelledby="hero-title"
@@ -120,11 +192,19 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                  <span className="text-blue-200 text-sm font-medium">{t.hero.badge}</span>
+                  <span className="text-blue-200 text-sm font-medium">
+                    {t.hero.badge}
+                  </span>
                 </div>
-                <h1 id="hero-title" className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <h1
+                  id="hero-title"
+                  className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+                >
                   {t.hero.title}
-                  <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent"> {t.hero.titleHighlight}</span>
+                  <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                    {" "}
+                    {t.hero.titleHighlight}
+                  </span>
                   <br />
                   {t.hero.subtitle}
                 </h1>
@@ -132,7 +212,7 @@ export default function Home() {
                   {t.hero.description}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <motion.button 
+                  <motion.button
                     className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -140,7 +220,7 @@ export default function Home() {
                   >
                     {t.hero.explorePortfolio}
                   </motion.button>
-                  <motion.button 
+                  <motion.button
                     className="border-2 border-white/50 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -151,7 +231,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative">
-                <motion.div 
+                <motion.div
                   className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -159,7 +239,7 @@ export default function Home() {
                 >
                   <div className="grid grid-cols-2 gap-4">
                     {t.hero.cards.map((card, index) => (
-                      <motion.div 
+                      <motion.div
                         key={index}
                         className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl p-6 border border-white/10"
                         initial={{ opacity: 0, y: 20 }}
@@ -167,8 +247,12 @@ export default function Home() {
                         transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                         whileHover={{ scale: 1.05 }}
                       >
-                        <div className="text-4xl mb-2" aria-hidden="true">{card.icon}</div>
-                        <h3 className="text-white font-semibold mb-1">{card.title}</h3>
+                        <div className="text-4xl mb-2" aria-hidden="true">
+                          {card.icon}
+                        </div>
+                        <h3 className="text-white font-semibold mb-1">
+                          {card.title}
+                        </h3>
                         <p className="text-blue-200 text-sm">{card.subtitle}</p>
                       </motion.div>
                     ))}
@@ -180,23 +264,27 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <section 
+        <section
           className="relative z-10 py-16 px-6"
           aria-labelledby="stats-title"
         >
           <div className="max-w-7xl mx-auto">
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-              <h2 id="stats-title" className="sr-only">Company Statistics</h2>
+              <h2 id="stats-title" className="sr-only">
+                Company Statistics
+              </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 {t.stats.items.map((item, index) => (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{item.value}</div>
+                    <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
+                      {item.value}
+                    </div>
                     <div className="text-blue-200">{item.label}</div>
                   </motion.div>
                 ))}
@@ -206,14 +294,19 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section 
-          id="about" 
+        <section
+          id="about"
           className="relative z-10 py-20 px-6"
           aria-labelledby="about-title"
         >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 id="about-title" className="text-4xl lg:text-5xl font-bold text-white mb-4">{t.about.title}</h2>
+              <h2
+                id="about-title"
+                className="text-4xl lg:text-5xl font-bold text-white mb-4"
+              >
+                {t.about.title}
+              </h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 {t.about.subtitle}
               </p>
@@ -221,13 +314,17 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                  <h3 className="text-2xl font-bold text-white mb-4">{t.about.vision}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {t.about.vision}
+                  </h3>
                   <p className="text-blue-100 leading-relaxed">
                     {t.about.visionText}
                   </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                  <h3 className="text-2xl font-bold text-white mb-4">{t.about.mission}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {t.about.mission}
+                  </h3>
                   <p className="text-blue-100 leading-relaxed">
                     {t.about.missionText}
                   </p>
@@ -241,7 +338,9 @@ export default function Home() {
                         <span className="text-2xl">✓</span>
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold">{item.title}</h4>
+                        <h4 className="text-white font-semibold">
+                          {item.title}
+                        </h4>
                         <p className="text-blue-200 text-sm">{item.subtitle}</p>
                       </div>
                     </div>
@@ -253,10 +352,19 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="relative z-10 py-20 px-6" aria-labelledby="services-title">
+        <section
+          id="services"
+          className="relative z-10 py-20 px-6"
+          aria-labelledby="services-title"
+        >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 id="services-title" className="text-4xl lg:text-5xl font-bold text-white mb-4">{t.services.title}</h2>
+              <h2
+                id="services-title"
+                className="text-4xl lg:text-5xl font-bold text-white mb-4"
+              >
+                {t.services.title}
+              </h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 {t.services.subtitle}
               </p>
@@ -264,43 +372,61 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8">
               <article className="group bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-3xl" aria-hidden="true">🧪</span>
+                  <span className="text-3xl" aria-hidden="true">
+                    🧪
+                  </span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{t.services.chemical.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {t.services.chemical.title}
+                </h3>
                 <p className="text-blue-100 mb-6 leading-relaxed">
                   {t.services.chemical.description}
                 </p>
                 <ul className="space-y-2 text-blue-200">
                   {t.services.chemical.features.map((feature, index) => (
-                    <li key={index} className="flex items-center"><span className="mr-2">•</span> {feature}</li>
+                    <li key={index} className="flex items-center">
+                      <span className="mr-2">•</span> {feature}
+                    </li>
                   ))}
                 </ul>
               </article>
               <article className="group bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-3xl" aria-hidden="true">🔬</span>
+                  <span className="text-3xl" aria-hidden="true">
+                    🔬
+                  </span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{t.services.analysis.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {t.services.analysis.title}
+                </h3>
                 <p className="text-blue-100 mb-6 leading-relaxed">
                   {t.services.analysis.description}
                 </p>
                 <ul className="space-y-2 text-blue-200">
                   {t.services.analysis.features.map((feature, index) => (
-                    <li key={index} className="flex items-center"><span className="mr-2">•</span> {feature}</li>
+                    <li key={index} className="flex items-center">
+                      <span className="mr-2">•</span> {feature}
+                    </li>
                   ))}
                 </ul>
               </article>
               <article className="group bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-3xl" aria-hidden="true">🏭</span>
+                  <span className="text-3xl" aria-hidden="true">
+                    🏭
+                  </span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{t.services.solutions.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {t.services.solutions.title}
+                </h3>
                 <p className="text-blue-100 mb-6 leading-relaxed">
                   {t.services.solutions.description}
                 </p>
                 <ul className="space-y-2 text-blue-200">
                   {t.services.solutions.features.map((feature, index) => (
-                    <li key={index} className="flex items-center"><span className="mr-2">•</span> {feature}</li>
+                    <li key={index} className="flex items-center">
+                      <span className="mr-2">•</span> {feature}
+                    </li>
                   ))}
                 </ul>
               </article>
@@ -309,23 +435,41 @@ export default function Home() {
         </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="relative z-10 py-20 px-6" aria-labelledby="portfolio-title">
+        <section
+          id="portfolio"
+          className="relative z-10 py-20 px-6"
+          aria-labelledby="portfolio-title"
+        >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 id="portfolio-title" className="text-4xl lg:text-5xl font-bold text-white mb-4">{t.portfolio.title}</h2>
+              <h2
+                id="portfolio-title"
+                className="text-4xl lg:text-5xl font-bold text-white mb-4"
+              >
+                {t.portfolio.title}
+              </h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 {t.portfolio.subtitle}
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {t.portfolio.items.map((item, index) => (
-                <article key={index} className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <article
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/15 transition-all duration-300"
+                >
                   <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                    <span className="text-white font-semibold text-lg">{item.badge}</span>
+                    <span className="text-white font-semibold text-lg">
+                      {item.badge}
+                    </span>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-blue-200 text-sm mb-4">{item.description}</p>
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-blue-200 text-sm mb-4">
+                      {item.description}
+                    </p>
                     <div className="flex items-center text-blue-300 text-sm hover:text-white transition">
                       <span>{t.portfolio.viewDetails}</span>
                       <span className="ml-2">→</span>
@@ -338,10 +482,19 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="relative z-10 py-20 px-6" aria-labelledby="contact-title">
+        <section
+          id="contact"
+          className="relative z-10 py-20 px-6"
+          aria-labelledby="contact-title"
+        >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 id="contact-title" className="text-4xl lg:text-5xl font-bold text-white mb-4">{t.contact.title}</h2>
+              <h2
+                id="contact-title"
+                className="text-4xl lg:text-5xl font-bold text-white mb-4"
+              >
+                {t.contact.title}
+              </h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 {t.contact.subtitle}
               </p>
@@ -349,24 +502,42 @@ export default function Home() {
             <div className="grid lg:grid-cols-3 gap-8 mb-12">
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl" aria-hidden="true">📍</span>
+                  <span className="text-3xl" aria-hidden="true">
+                    📍
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{t.contact.address}</h3>
-                <p className="text-blue-100 whitespace-pre-line">{t.contact.addressText}</p>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {t.contact.address}
+                </h3>
+                <p className="text-blue-100 whitespace-pre-line">
+                  {t.contact.addressText}
+                </p>
               </div>
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl" aria-hidden="true">📞</span>
+                  <span className="text-3xl" aria-hidden="true">
+                    📞
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{t.contact.phone}</h3>
-                <p className="text-blue-100 whitespace-pre-line">{t.contact.phoneText}</p>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {t.contact.phone}
+                </h3>
+                <p className="text-blue-100 whitespace-pre-line">
+                  {t.contact.phoneText}
+                </p>
               </div>
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl" aria-hidden="true">✉️</span>
+                  <span className="text-3xl" aria-hidden="true">
+                    ✉️
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{t.contact.email}</h3>
-                <p className="text-blue-100 whitespace-pre-line">{t.contact.emailText}</p>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {t.contact.email}
+                </h3>
+                <p className="text-blue-100 whitespace-pre-line">
+                  {t.contact.emailText}
+                </p>
               </div>
             </div>
             <div className="text-center">
@@ -391,31 +562,51 @@ export default function Home() {
                   height={48}
                   className="rounded-lg"
                 />
-                <div className="text-white font-bold text-xl">MatchChemical</div>
+                <div className="text-white font-bold text-xl">
+                  {t.footer.fullCompanyName}
+                </div>
               </div>
               <p className="text-blue-200 text-sm">{t.footer.description}</p>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">{t.footer.services}</h4>
+              <h4 className="text-white font-semibold mb-4">
+                {t.footer.services}
+              </h4>
               <ul className="space-y-2 text-blue-200 text-sm">
                 {t.footer.links.services.map((label, index) => (
-                  <li key={index}><a href="#" className="hover:text-white transition">{label}</a></li>
+                  <li key={index}>
+                    <a href="#" className="hover:text-white transition">
+                      {label}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">{t.footer.about}</h4>
+              <h4 className="text-white font-semibold mb-4">
+                {t.footer.about}
+              </h4>
               <ul className="space-y-2 text-blue-200 text-sm">
                 {t.footer.links.about.map((label, index) => (
-                  <li key={index}><a href="#" className="hover:text-white transition">{label}</a></li>
+                  <li key={index}>
+                    <a href="#" className="hover:text-white transition">
+                      {label}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">{t.footer.contact}</h4>
+              <h4 className="text-white font-semibold mb-4">
+                {t.footer.contact}
+              </h4>
               <ul className="space-y-2 text-blue-200 text-sm">
                 {t.footer.links.contact.map((label, index) => (
-                  <li key={index}><a href="#" className="hover:text-white transition">{label}</a></li>
+                  <li key={index}>
+                    <a href="#" className="hover:text-white transition">
+                      {label}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -428,45 +619,45 @@ export default function Home() {
 
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden -z-10">
-        <motion.div 
+        <motion.div
           className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-          animate={{ 
+          animate={{
             scale: [1, 1.1, 1],
             x: [0, 20, 0],
-            y: [0, -20, 0]
+            y: [0, -20, 0],
           }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-          animate={{ 
+          animate={{
             scale: [1, 1.2, 1],
             x: [0, -30, 0],
-            y: [0, 30, 0]
+            y: [0, 30, 0],
           }}
-          transition={{ 
-            duration: 10, 
-            repeat: Infinity, 
+          transition={{
+            duration: 10,
+            repeat: Infinity,
             ease: "easeInOut",
-            delay: 2
+            delay: 2,
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-10"
-          animate={{ 
+          animate={{
             scale: [1, 1.15, 1],
             x: [0, 40, 0],
-            y: [0, -40, 0]
+            y: [0, -40, 0],
           }}
-          transition={{ 
-            duration: 12, 
-            repeat: Infinity, 
+          transition={{
+            duration: 12,
+            repeat: Infinity,
             ease: "easeInOut",
-            delay: 4
+            delay: 4,
           }}
         />
       </div>

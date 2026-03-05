@@ -7,6 +7,9 @@
     "contact": "ติดต่อ",
     "contactUs": "ติดต่อเรา"
   },
+  "header": {
+    "companyName": "แมทช์ เคมิคอล"
+  },
   "hero": {
     "badge": "🧪 ผู้นำด้านโซลูชันทางเคมี",
     "title": "นวัตกรรมทาง",
@@ -135,18 +138,23 @@
     "phone": "โทรศัพท์",
     "email": "อีเมล",
     "sendMessage": "ส่งข้อความถึงเรา",
-    "addressText": "123 ถนนอุตสาหกรรม\nเขตคลองเตย กรุงเทพฯ 10110",
-    "phoneText": "02-123-4567\n08-9999-8888",
-    "emailText": "info@matchchemical.com\nsupport@matchchemical.com"
+    "addressText": "399/76 ถนนฉลองกรุง แขวงลำปลาทิว เขตลาดกระบัง กรุงเทพมหานคร 10520",
+    "phoneText": "02-045-5568",
+    "emailText": "matchchemical@gmail.com"
   },
   "footer": {
+    "fullCompanyName": "บริษัท แมทช์ เคมิคอล จำกัด",
     "description": "ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม",
     "services": "บริการ",
     "about": "เกี่ยวกับ",
     "contact": "ติดต่อ",
     "copyright": "© 2024 MatchChemical. All rights reserved.",
     "links": {
-      "services": ["สารเคมีอุตสาหกรรม", "วิเคราะห์ทางเคมี", "โซลูชันอุตสาหกรรม"],
+      "services": [
+        "สารเคมีอุตสาหกรรม",
+        "วิเคราะห์ทางเคมี",
+        "โซลูชันอุตสาหกรรม"
+      ],
       "about": ["เกี่ยวกับเรา", "ผลงาน", "ทีมงาน"],
       "contact": ["ติดต่อเรา", "ปรึกษาฟรี", "คำถามที่พบบ่อย"]
     }

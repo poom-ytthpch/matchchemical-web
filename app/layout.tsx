@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MatchChemical - ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม | บริการสารเคมีคุณภาพสูง",
-  description: "MatchChemical ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม ให้บริการด้านสารเคมีคุณภาพสูงและนวัตกรรมล่าสุดสำหรับธุรกิจของคุณ บริการวิเคราะห์ทางเคมี และแนวทางแก้ไขปัญหาทางอุตสาหกรรม",
-  keywords: "สารเคมี,เคมีอุตสาหกรรม,บริการทางเคมี,วิเคราะห์ทางเคมี,โซลูชันเคมี,MatchChemical,industrial chemicals,chemical analysis,chemical solutions",
-  authors: [{ name: "MatchChemical" }],
-  creator: "MatchChemical",
-  publisher: "MatchChemical",
+  title: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. | CHEMICAL FOR INDUSTRIAL SOLUTIONS",
+  description: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. เป็นผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม จัดจำหน่ายสารเคมีคุณภาพสูง นำเข้าจากต่างประเทศ ให้บริการด้านสารเคมี วิเคราะห์ทางเคมี และแนวทางแก้ไขปัญหาทางอุตสาหกรรม พร้อมบริการที่มีประสิทธิภาพเพื่อความพึงพอใจสูงสุดของลูกค้า",
+  keywords: "บริษัท แมทช์ เคมิคอล จำกัด,MATCH CHEMICAL CO., LTD.,MatchChemical,สารเคมี,เคมีอุตสาหกรรม,บริการทางเคมี,วิเคราะห์ทางเคมี,โซลูชันเคมี,industrial chemicals,chemical analysis,chemical solutions,chemical supplier",
+  authors: [{ name: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD." }],
+  creator: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD.",
+  publisher: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD.",
   formatDetection: {
     email: false,
     address: false,
@@ -33,16 +33,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "MatchChemical - ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม",
-    description: "MatchChemical ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม ให้บริการด้านสารเคมีคุณภาพสูงและนวัตกรรมล่าสุดสำหรับธุรกิจของคุณ",
+    title: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. | CHEMICAL FOR INDUSTRIAL SOLUTIONS",
+    description: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม จัดจำหน่ายสารเคมีคุณภาพสูง นำเข้าจากต่างประเทศ พร้อมบริการที่มีประสิทธิภาพ",
     url: "https://matchchemical.co",
-    siteName: "MatchChemical",
+    siteName: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD.",
     images: [
       {
         url: "/matchchemical_logo_removebg.png",
         width: 1200,
         height: 630,
-        alt: "MatchChemical Logo",
+        alt: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. Logo",
       },
     ],
     locale: "th_TH",
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MatchChemical - ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม",
-    description: "MatchChemical ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม ให้บริการด้านสารเคมีคุณภาพสูง",
+    title: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. | CHEMICAL FOR INDUSTRIAL SOLUTIONS",
+    description: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม จัดจำหน่ายสารเคมีคุณภาพสูง",
     images: ["/matchchemical_logo_removebg.png"],
   },
   robots: {
@@ -65,6 +65,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/icon-192.png",
+  },
 };
 
 export default function RootLayout({
@@ -74,42 +79,63 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "MatchChemical",
+    "@type": "Corporation",
+    "name": "บริษัท แมทช์ เคมิคอล จำกัด",
+    "alternateName": "MATCH CHEMICAL CO., LTD.",
+    "legalName": "บริษัท แมทช์ เคมิคอล จำกัด",
+    "taxID": "0105563066966",
     "url": "https://matchchemical.co",
     "logo": "https://matchchemical.co/matchchemical_logo_removebg.png",
-    "description": "ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม ให้บริการด้านสารเคมีคุณภาพสูงและนวัตกรรมล่าสุดสำหรับธุรกิจของคุณ",
+    "description": "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. เป็นผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม จัดจำหน่ายสารเคมีคุณภาพสูง นำเข้าจากต่างประเทศ ให้บริการด้านสารเคมี วิเคราะห์ทางเคมี และแนวทางแก้ไขปัญหาทางอุตสาหกรรม พร้อมบริการที่มีประสิทธิภาพเพื่อความพึงพอใจสูงสุดของลูกค้า",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "TH",
-      "addressLocality": "Bangkok"
+      "streetAddress": "399/76 ถนนฉลองกรุง",
+      "addressLocality": "แขวงลำปลาทิว เขตลาดกระบัง",
+      "addressRegion": "กรุงเทพมหานคร",
+      "postalCode": "10520",
+      "addressCountry": "TH"
     },
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "availableLanguage": ["Thai", "English"]
+      "availableLanguage": ["Thai", "English"],
+      "telephone": "+66-2-045-5568",
+      "email": "matchchemical@gmail.com"
     },
     "sameAs": [
       "https://www.facebook.com/matchchemical",
       "https://www.linkedin.com/company/matchchemical"
     ],
-    "offers": {
-      "@type": "Offer",
-      "itemOffered": [
+    "areaServed": "Thailand",
+    "foundingDate": "2024",
+    "businessType": "การค้าสารเคมีและอุปกรณ์ต่างๆใช้สำหรับบำบัดน้ำทุกชนิด การขายส่งเคมีภัณฑ์ทางอุตสาหกรรม",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "บริการทางเคมี",
+      "itemListElement": [
         {
-          "@type": "Service",
-          "name": "บริการสารเคมี",
-          "description": "จัดหาและจัดจำหน่ายสารเคมีคุณภาพสูงสำหรับอุตสาหกรรม"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "จัดจำหน่ายสารเคมี",
+            "description": "จัดจำหน่ายสารเคมีคุณภาพสูง นำเข้าจากต่างประเทศสำหรับอุตสาหกรรม"
+          }
         },
         {
-          "@type": "Service", 
-          "name": "บริการวิเคราะห์ทางเคมี",
-          "description": "บริการทดสอบและวิเคราะห์คุณภาพสารเคมี"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "บริการวิเคราะห์ทางเคมี",
+            "description": "บริการทดสอบและวิเคราะห์คุณภาพสารเคมีด้วยห้องปฏิบัติการมาตรฐานสากล"
+          }
         },
         {
-          "@type": "Service",
-          "name": "โซลูชันทางเคมี",
-          "description": "แนวทางแก้ไขปัญหาทางเคมีสำหรับอุตสาหกรรม"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "โซลูชันทางเคมีอุตสาหกรรม",
+            "description": "ให้คำปรึกษาและแนะนำโซลูชันทางเคมีที่เหมาะสมกับธุรกิจของคุณ"
+          }
         }
       ]
     }
