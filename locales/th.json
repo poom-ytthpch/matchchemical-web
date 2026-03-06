@@ -44,9 +44,9 @@
   },
   "stats": {
     "items": [
-      { "value": "500+", "label": "ลูกค้าทั่วประเทศ" },
-      { "value": "20+", "label": "ปีประสบการณ์" },
-      { "value": "1000+", "label": "ผลิตภัณฑ์" },
+      { "value": "10+", "label": "ลูกค้าทั่วประเทศ" },
+      { "value": "5+", "label": "ปีประสบการณ์" },
+      { "value": "100+", "label": "ผลิตภัณฑ์" },
       { "value": "98%", "label": "ความพึงพอใจ" }
     ]
   },
@@ -141,7 +141,8 @@
     "sendMessage": "ส่งข้อความถึงเรา",
     "addressText": "399/76 ถนนฉลองกรุง แขวงลำปลาทิว เขตลาดกระบัง กรุงเทพมหานคร 10520",
     "phoneText": "02-045-5568",
-    "emailText": "matchchemical@gmail.com"
+    "emailText": "matchchemical@gmail.com",
+    "mapLink": "ดูบน Google Maps"
   },
   "footer": {
     "fullCompanyName": "บริษัท แมทช์ เคมิคอล จำกัด",

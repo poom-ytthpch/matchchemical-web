@@ -44,9 +44,9 @@
   },
   "stats": {
     "items": [
-      { "value": "500+", "label": "Customers nationwide" },
-      { "value": "20+", "label": "Years of experience" },
-      { "value": "1000+", "label": "Products" },
+      { "value": "10+", "label": "Customers nationwide" },
+      { "value": "5+", "label": "Years of experience" },
+      { "value": "100+", "label": "Products" },
       { "value": "98%", "label": "Satisfaction" }
     ]
   },
@@ -141,7 +141,8 @@
     "sendMessage": "Send Message",
     "addressText": "399/76, CHALONG KRUNG, LAM PLA TUE, LAT KRABANG, BANGKOK 10520",
     "phoneText": "02-045-5568",
-    "emailText": "matchchemical@gmail.com"
+    "emailText": "matchchemical@gmail.com",
+    "mapLink": "View on Google Maps"
   },
   "footer": {
     "fullCompanyName": "MATCH CHEMICAL CO., LTD.",
