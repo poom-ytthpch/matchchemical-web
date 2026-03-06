@@ -86,7 +86,7 @@ export default function RootLayout({
     "legalName": "บริษัท แมทช์ เคมิคอล จำกัด",
     "taxID": "0105563066966",
     "url": "https://matchchemical.co",
-    "logo": "https://matchchemical.co/matchchemical_logo_removebg.png",
+    "logo": "https://matchchemical.co/favicon.ico",
     "description": "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. เป็นผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม จัดจำหน่ายสารเคมีคุณภาพสูง นำเข้าจากต่างประเทศ ให้บริการด้านสารเคมี วิเคราะห์ทางเคมี และแนวทางแก้ไขปัญหาทางอุตสาหกรรม พร้อมบริการที่มีประสิทธิภาพเพื่อความพึงพอใจสูงสุดของลูกค้า",
     "address": {
       "@type": "PostalAddress",
