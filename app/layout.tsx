@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD.",
     images: [
       {
-        url: "/matchchemical_logo_removebg.png",
+        url: "/favicon.ico",
         width: 1200,
         height: 630,
         alt: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. Logo",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. | CHEMICAL FOR INDUSTRIAL SOLUTIONS",
     description: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม จัดจำหน่ายสารเคมีคุณภาพสูง",
-    images: ["/matchchemical_logo_removebg.png"],
+    images: ["/favicon.ico"],
   },
   robots: {
     index: true,

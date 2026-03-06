@@ -56,7 +56,7 @@ export default function Home() {
             <div className="flex justify-between items-center py-4 lg:py-6">
               <div className="flex items-center space-x-2">
                 <Image
-                  src="/matchchemical_logo_removebg.png"
+                  src="/favicon.ico"
                   alt="MatchChemical Logo"
                   width={45}
                   height={45}
@@ -629,7 +629,7 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Image
-                  src="/matchchemical_logo_removebg.png"
+                  src="/favicon.ico"
                   alt="MatchChemical Logo"
                   width={48}
                   height={48}
