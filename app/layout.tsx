@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/match_icon_no_text.png",
         width: 1200,
         height: 630,
         alt: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. Logo",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. | CHEMICAL FOR INDUSTRIAL SOLUTIONS",
     description: "บริษัท แมทช์ เคมิคอล จำกัด MATCH CHEMICAL CO., LTD. ผู้นำด้านโซลูชันทางเคมีอุตสาหกรรม จัดจำหน่ายสารเคมีคุณภาพสูง",
-    images: ["/og-image.png"],
+    images: ["/match_icon_no_text.png"],
   },
   robots: {
     index: true,
@@ -68,13 +68,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/match_icon_no_text.png", sizes: "16x16", type: "image/png" },
+      { url: "/match_icon_no_text.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/match_icon_no_text.png", sizes: "192x192", type: "image/png" },
     ],
-    shortcut: "/favicon-512.png",
+    shortcut: "/match_icon_no_text.png",
   },
 };
 

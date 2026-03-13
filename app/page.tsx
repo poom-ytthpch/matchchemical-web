@@ -56,7 +56,7 @@ export default function Home() {
             <div className="flex justify-between items-center py-4 lg:py-6">
               <div className="flex items-center space-x-2">
                 <Image
-                  src="/favicon.ico"
+                  src="/match_icon_no_text.png"
                   alt="MatchChemical Logo"
                   width={45}
                   height={45}
